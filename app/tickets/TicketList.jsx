@@ -1,18 +1,18 @@
-import { revalidatePath } from "next/cache";
 import Link from "next/link";
 
 async function getTickets() {
+  // imitate delay
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const res = await fetch("http://localhost:4000/tickets", {
     next: {
-      revalidate: 0,
+      revalidate: 0, // use 0 to opt out of using cache
     },
   });
   return res.json();
 }
-export default async function TicketsList() {
+export default async function TicketList() {
   const tickets = await getTickets();
-  console.log(tickets);
-  // fetch tickets data
+
   return (
     <>
       {tickets.map((ticket) => (
@@ -26,7 +26,9 @@ export default async function TicketsList() {
           </Link>
         </div>
       ))}
-      {tickets.length === 0 && <p className="text-center">No tickets found</p>}
+      {tickets.length === 0 && (
+        <p className="text-center">There are no open tickets, ya!</p>
+      )}
     </>
   );
 }

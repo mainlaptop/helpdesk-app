@@ -1,20 +1,21 @@
-import React from "react";
-import TicketsList from "./TicketsList";
+import { Suspense } from "react";
+import TicketList from "./TicketList";
+import Loading from "../loading";
 
-const page = () => {
+export default function Tickets() {
   return (
     <main>
       <nav>
         <div>
           <h2>Tickets</h2>
           <p>
-            <small> View all tickets</small>
+            <small>Currently open tickets</small>
           </p>
         </div>
       </nav>
-      <TicketsList />
+      <Suspense fallback={<Loading />}>
+        <TicketList />
+      </Suspense>
     </main>
   );
-};
-
-export default page;
+}

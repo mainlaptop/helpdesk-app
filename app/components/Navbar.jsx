@@ -1,16 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import Logo from "./logo.png";
+import Logo from "./helpdesk-logo.png";
 
-const Navbar = () => {
+export default function Navbar() {
   return (
     <nav>
-      <Image src={Logo} alt="logo" width={70} height={100} placeholder="blur" />
+      <Image
+        src={Logo}
+        alt="Help Desk Logo"
+        width={70}
+        quality={100}
+        placeholder="blur"
+      />
       <Link href="/">Dashboard</Link>
       <Link href="/tickets">Tickets</Link>
     </nav>
   );
-};
-
-export default Navbar;
+}
