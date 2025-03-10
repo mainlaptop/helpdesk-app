@@ -3,7 +3,7 @@ import TicketsList from "./TicketsList";
 
 const page = () => {
   return (
-    <div>
+    <main>
       <nav>
         <div>
           <h2>Tickets</h2>
@@ -13,7 +13,7 @@ const page = () => {
         </div>
       </nav>
       <TicketsList />
-    </div>
+    </main>
   );
 };
 
