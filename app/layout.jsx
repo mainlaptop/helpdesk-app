@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Rubik } from "next/font/google";
-
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 // components
 import Navbar from "./components/Navbar";
 
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={rubik.className}>
         <Navbar />
-        {children}
+        <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>
   );
