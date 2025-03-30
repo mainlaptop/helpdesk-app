@@ -1,10 +1,11 @@
-import AppCard from "../components/AppCard";
+"use client";
+import ProductGridItem from "../components/ProductGridItem";
 
 export default function AdminPage() {
   return (
     <div>
       <h2>AdminPage</h2>
-      <AppCard />
+      <ProductGridItem />
     </div>
   );
 }
